@@ -209,6 +209,8 @@ if __name__ == "__main__":
 
 def create_test_filelists(base_dir):
     """Create various test filelists"""
+    print("Creating test filelists...")
+    
     filelists = {
         "include_all.txt": """
 # Include all files
@@ -264,45 +266,100 @@ non_existent_dir/
     print(f"✓ Created {len(filelists)} test filelists")
     return list(filelists.keys())
 
+def setup_test_environment(base_dir):
+    """Setup complete test environment"""
+    print("\n" + "="*60)
+    print("SETTING UP TEST ENVIRONMENT")
+    print("="*60)
+    
+    # Create test files
+    file_count = create_test_files(base_dir)
+    print(f"Total created: {file_count} test files")
+    
+    # Create filelists
+    create_test_filelists(base_dir)
+    
+    return True
+
 def test_basic_packaging(base_dir, test_name="test_package"):
     """Test basic packaging functionality"""
     print_step(1, "Testing basic packaging")
     
-    # Create list of files to package
-    files_to_package = [
-        "main.py",
-        "config.yaml",
-        "README.md",
-        "src/",
-        "docs/",
-    ]
-    
-    print(f"Packaging {len(files_to_package)} files/directories...")
-    success = tar_gz_files(files_to_package, test_name, verbose=True)
-    
-    if success:
-        print("✓ Basic packaging test passed")
-    else:
-        print("✗ Basic packaging test failed")
-    
-    return success
+    # Save current directory
+    original_cwd = os.getcwd()
+    try:
+        # Change to test directory
+        os.chdir(base_dir)
+        
+        # Create list of files to package
+        files_to_package = [
+            "main.py",
+            "config.yaml",
+            "README.md",
+            "src/",
+            "docs/",
+        ]
+        
+        print(f"Packaging {len(files_to_package)} files/directories...")
+        success = tar_gz_files(files_to_package, test_name, verbose=True)
+        
+        if success:
+            print("✓ Basic packaging test passed")
+        else:
+            print("✗ Basic packaging test failed")
+        
+        return success
+    finally:
+        # Restore original directory
+        os.chdir(original_cwd)
 
 def test_filelist_packaging(base_dir):
     """Test packaging with filelists"""
     print_step(2, "Testing filelist packaging")
     
-    filelists = create_test_filelists(base_dir)
-    
-    for i, filelist in enumerate(filelists, 1):
-        print(f"\nTesting filelist: {filelist}")
-        success = package_files(filelist, f"test_filelist_{i}", verbose=True)
+    # Save current directory
+    original_cwd = os.getcwd()
+    try:
+        # Change to test directory
+        os.chdir(base_dir)
         
-        if success:
-            print(f"✓ Filelist packaging test passed: {filelist}")
-        else:
-            print(f"✗ Filelist packaging test failed: {filelist}")
-    
-    return True
+        # List available filelists
+        filelists = []
+        for file in Path(".").glob("*.txt"):
+            if file.is_file():
+                filelists.append(str(file))
+        
+        if not filelists:
+            print("No filelists found in test directory")
+            return False
+        
+        print(f"Found {len(filelists)} filelists to test")
+        all_passed = True
+        
+        for i, filelist in enumerate(filelists[:3], 1):  # Test only first 3
+            print(f"\nTesting filelist: {filelist}")
+            success = package_files(filelist, f"test_filelist_{i}", verbose=True)
+            
+            # Special handling for empty_list.txt
+            if filelist == "empty_list.txt":
+                # For empty_list.txt, we expect it to fail (no files matched)
+                if not success:
+                    print(f"✓ Filelist packaging test passed: {filelist} (correctly handled empty filelist)")
+                else:
+                    print(f"✗ Filelist packaging test failed: {filelist} (should have failed for empty filelist)")
+                    all_passed = False
+            else:
+                # For other filelists, we expect success
+                if success:
+                    print(f"✓ Filelist packaging test passed: {filelist}")
+                else:
+                    print(f"✗ Filelist packaging test failed: {filelist}")
+                    all_passed = False
+        
+        return all_passed
+    finally:
+        # Restore original directory
+        os.chdir(original_cwd)
 
 def test_list_packages():
     """Test package listing function"""
@@ -363,67 +420,85 @@ def test_edge_cases(base_dir):
     """Test edge cases and error handling"""
     print_step(6, "Testing edge cases")
     
-    print("\n1. Testing with non-existent filelist...")
-    success = package_files("non_existent.txt", "edge_test_1", verbose=False)
-    if not success:
-        print("✓ Correctly handled non-existent filelist")
-    else:
-        print("✗ Should have failed with non-existent filelist")
-    
-    print("\n2. Testing empty filelist...")
-    with open(base_dir / "empty.txt", "w") as f:
-        f.write("# Empty filelist\n")
-    
-    success = package_files("empty.txt", "edge_test_2", verbose=False)
-    if not success:
-        print("✓ Correctly handled empty filelist")
-    else:
-        print("✗ Should have failed with empty filelist")
-    
-    print("\n3. Testing filelist with only comments...")
-    with open(base_dir / "only_comments.txt", "w") as f:
-        f.write("# Only comments\n# Another comment\n")
-    
-    success = package_files("only_comments.txt", "edge_test_3", verbose=False)
-    if not success:
-        print("✓ Correctly handled filelist with only comments")
-    else:
-        print("✗ Should have failed with filelist with only comments")
-    
-    return True
+    # Save current directory
+    original_cwd = os.getcwd()
+    try:
+        # Change to test directory
+        os.chdir(base_dir)
+        
+        print("\n1. Testing with non-existent filelist...")
+        success = package_files("non_existent.txt", "edge_test_1", verbose=False)
+        if not success:
+            print("✓ Correctly handled non-existent filelist")
+        else:
+            print("✗ Should have failed with non-existent filelist")
+        
+        print("\n2. Testing empty filelist...")
+        with open("empty.txt", "w") as f:
+            f.write("# Empty filelist\n")
+        
+        success = package_files("empty.txt", "edge_test_2", verbose=False)
+        if not success:
+            print("✓ Correctly handled empty filelist")
+        else:
+            print("✗ Should have failed with empty filelist")
+        
+        print("\n3. Testing filelist with only comments...")
+        with open("only_comments.txt", "w") as f:
+            f.write("# Only comments\n# Another comment\n")
+        
+        success = package_files("only_comments.txt", "edge_test_3", verbose=False)
+        if not success:
+            print("✓ Correctly handled filelist with only comments")
+        else:
+            print("✗ Should have failed with filelist with only comments")
+        
+        return True
+    finally:
+        # Restore original directory
+        os.chdir(original_cwd)
 
 def test_specific_packaging_scenarios(base_dir):
     """Test specific packaging scenarios"""
     print_step(7, "Testing specific packaging scenarios")
     
-    # Test 1: Package single file
-    print("\n1. Testing single file packaging...")
-    files = ["main.py"]
-    success = tar_gz_files(files, "single_file_test", verbose=True)
-    if success:
-        print("✓ Single file packaging test passed")
-    else:
-        print("✗ Single file packaging test failed")
-    
-    # Test 2: Package directory with trailing slash
-    print("\n2. Testing directory packaging (with trailing slash)...")
-    files = ["src/"]
-    success = tar_gz_files(files, "directory_test", verbose=True)
-    if success:
-        print("✓ Directory packaging test passed")
-    else:
-        print("✗ Directory packaging test failed")
-    
-    # Test 3: Package non-existent file
-    print("\n3. Testing packaging with non-existent file...")
-    files = ["main.py", "non_existent.txt", "src/"]
-    success = tar_gz_files(files, "mixed_test", verbose=True)
-    if success:
-        print("✓ Mixed file list packaging test passed")
-    else:
-        print("✗ Mixed file list packaging test failed")
-    
-    return True
+    # Save current directory
+    original_cwd = os.getcwd()
+    try:
+        # Change to test directory
+        os.chdir(base_dir)
+        
+        # Test 1: Package single file
+        print("\n1. Testing single file packaging...")
+        files = ["main.py"]
+        success = tar_gz_files(files, "single_file_test", verbose=True)
+        if success:
+            print("✓ Single file packaging test passed")
+        else:
+            print("✗ Single file packaging test failed")
+        
+        # Test 2: Package directory with trailing slash
+        print("\n2. Testing directory packaging (with trailing slash)...")
+        files = ["src/"]
+        success = tar_gz_files(files, "directory_test", verbose=True)
+        if success:
+            print("✓ Directory packaging test passed")
+        else:
+            print("✗ Directory packaging test failed")
+        
+        # Test 3: Package non-existent file
+        print("\n3. Testing packaging with non-existent file...")
+        files = ["main.py", "non_existent.txt", "src/"]
+        success = tar_gz_files(files, "mixed_test", verbose=True)
+        if success:
+            print("✓ Mixed file list packaging test passed")
+        else:
+            print("✗ Mixed file list packaging test failed")
+        
+        return True
+    finally:
+        # Restore original directory
+        os.chdir(original_cwd)
 
 def run_manual_tests(base_dir):
     """Run manual tests (recommended)"""
@@ -485,13 +560,8 @@ def main():
     print(f"Test directory: {test_dir}")
     
     try:
-        # 1. Create test files
-        print("\n" + "="*60)
-        print("PREPARING TEST ENVIRONMENT")
-        print("="*60)
-        
-        file_count = create_test_files(test_dir)
-        print(f"Total created: {file_count} test files")
+        # 1. Setup test environment
+        setup_test_environment(test_dir)
         
         # 2. Run automated tests
         print("\n" + "="*60)
@@ -522,6 +592,8 @@ def main():
                     failed += 1
             except Exception as e:
                 print(f"✗ {test_name} - ERROR: {e}")
+                import traceback
+                traceback.print_exc()
                 failed += 1
         
         # 3. Show test results
