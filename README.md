@@ -1,17 +1,67 @@
 ## Syncf - 优雅的文件同步打包工具
-<div align="center">
-<div style="
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
-    color: #333;
-    background: transparent;
-    padding: 20px 0;
-    margin: 0;
-    white-space: pre;
+<div align="center" style="
+    background: #1e1e1e;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border: 1px solid #444;
+    font-family: 'Courier New', Consolas, Monaco, monospace;
     text-align: center;
-    display: inline-block;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+">
+
+<!-- 终端标题栏 -->
+<div style="
+    background: #2d2d2d;
+    padding: 0.5rem 1rem;
+    border-radius: 6px 6px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+">
+    <span style="
+        width: 12px;
+        height: 12px;
+        background: #ff5f56;
+        border-radius: 50%;
+        display: inline-block;
+    "></span>
+    <span style="
+        width: 12px;
+        height: 12px;
+        background: #ffbd2e;
+        border-radius: 50%;
+        display: inline-block;
+    "></span>
+    <span style="
+        width: 12px;
+        height: 12px;
+        background: #27ca3f;
+        border-radius: 50%;
+        display: inline-block;
+    "></span>
+    <span style="
+        color: #888;
+        font-size: 0.8em;
+        margin-left: 1rem;
+    ">syncf — bash</span>
+</div>
+
+<pre style="
+    margin: 3rem 0 1.5rem 0;
+    padding: 0;
+    font-size: 0.9em;
+    line-height: 1.2;
+    color: #7ee787;
+    background: transparent;
+    border: none;
+    font-weight: bold;
 ">
          ::::::::::  ##::    ::## ##::   ::##  :::::::::: :::::::::::: 
         ::::::::::::  ##::  ::##  ###::  ::## :::::::::::: :::::::::::: 
@@ -20,8 +70,7 @@
              :::::::     ####     ##  ::###:: ::::::       ::::::::::   
         ::::::::::::     ####     ##   ::##:: :::::::::::: ::::::       
          ::::::::::      ####     ##    ::##   :::::::::: ::::::       
-</div>
-</div>
+</pre>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.6+-blue.svg" alt="Python Version">
