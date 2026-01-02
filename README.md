@@ -1,26 +1,5 @@
 ## Syncf - 优雅的文件同步打包工具
-<div align="center" style="
-    background: linear-gradient(90deg, 
-        #ff6b6b, #ffa726, #ffee58, #4caf50, 
-        #26c6da, #5c6bc0, #7e57c2
-    );
-    padding: 2rem 1rem;
-    border-radius: 15px;
-    margin: 1rem 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-">
-<pre style="
-    margin: 0;
-    padding: 0;
-    font-size: 0.9em;
-    line-height: 1.2;
-    color: white;
-    background: transparent;
-    border: none;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    font-family: 'Courier New', Consolas, Monaco, monospace;
-">
+<p align="center" style="font-family: monospace; font-size: 12px; line-height: 1.2; color: #333; margin: 20px 0; white-space: pre;">
          ::::::::::  ##::    ::## ##::   ::##  :::::::::: :::::::::::: 
         ::::::::::::  ##::  ::##  ###::  ::## :::::::::::: :::::::::::: 
         ::::::         ########   ####:: ::## ::::::       ::::::       
@@ -28,8 +7,7 @@
              :::::::     ####     ##  ::###:: ::::::       ::::::::::   
         ::::::::::::     ####     ##   ::##:: :::::::::::: ::::::       
          ::::::::::      ####     ##    ::##   :::::::::: ::::::       
-</pre>
-</div>
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.6+-blue.svg" alt="Python Version">
