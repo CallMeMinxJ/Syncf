@@ -9,7 +9,7 @@
 # GoerTek
 # All rights reserved.
 
-from .cli import main
+from .syncf import main
 
 if __name__ == "__main__":
     main()
