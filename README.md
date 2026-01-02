@@ -1,6 +1,23 @@
 ## Syncf - 优雅的文件同步打包工具
-<p align="center">
-<pre align="center">
+<div align="center" style="
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    color: white;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+">
+<pre style="
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+    line-height: 1.2;
+    color: #fff;
+    background: transparent;
+    border: none;
+">
          ::::::::::  ##::    ::## ##::   ::##  :::::::::: :::::::::::: 
         ::::::::::::  ##::  ::##  ###::  ::## :::::::::::: :::::::::::: 
         ::::::         ########   ####:: ::## ::::::       ::::::       
