@@ -1,5 +1,18 @@
 ## Syncf - 优雅的文件同步打包工具
-<p align="center" style="font-family: monospace; font-size: 12px; line-height: 1.2; color: #333; margin: 20px 0; white-space: pre;">
+<div align="center">
+<div style="
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: #333;
+    background: transparent;
+    padding: 20px 0;
+    margin: 0;
+    white-space: pre;
+    text-align: center;
+    display: inline-block;
+">
          ::::::::::  ##::    ::## ##::   ::##  :::::::::: :::::::::::: 
         ::::::::::::  ##::  ::##  ###::  ::## :::::::::::: :::::::::::: 
         ::::::         ########   ####:: ::## ::::::       ::::::       
@@ -7,7 +20,8 @@
              :::::::     ####     ##  ::###:: ::::::       ::::::::::   
         ::::::::::::     ####     ##   ::##:: :::::::::::: ::::::       
          ::::::::::      ####     ##    ::##   :::::::::: ::::::       
-</p>
+</div>
+</div>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.6+-blue.svg" alt="Python Version">
