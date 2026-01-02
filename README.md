@@ -13,19 +13,16 @@
 </strong>
 </p>
 
-<!-- Badges -->
-<p style="margin: 16px 0;">
-  <span style="background: #0550ae; color: white; padding: 5px 10px; border-radius: 2em; font-size: 13px; font-weight: 500;">Python 3.6+</span>
-  <span style="background: #2da44e; color: white; padding: 5px 10px; border-radius: 2em; font-size: 13px; font-weight: 500;">License MIT</span>
-  <span style="background: #2da44e; color: white; padding: 5px 10px; border-radius: 2em; font-size: 13px; font-weight: 500;">Status Active</span>
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.6+-blue.svg" alt="Python Version">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen.svg" alt="Status">
 </p>
 
-<!-- Description -->
-<p style="color: #57606a; font-size: 16px; margin: 20px auto; max-width: 600px; line-height: 1.5;">
+<p align="center">
   <strong>一个优雅的命令行工具，用于智能打包和管理文件集合</strong>
 </p>
 
-</div>
 
 ## ✨ 特性亮点
 
