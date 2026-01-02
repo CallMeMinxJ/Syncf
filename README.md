@@ -299,8 +299,8 @@ syncf -u
 
 **Astor Jiang** - 优雅的工具创造者
 
-- 📧 Email: astor@example.com
-- 💼 GitHub: [@astor](https://github.com/astor)
+- 📧 Email: astor.jiang@outlook.com
+- 💼 GitHub: [@astor](https://github.com/CallMeMinxJ)
 - 🏢 Company: GoerTek
 
 ## 🙏 致谢
