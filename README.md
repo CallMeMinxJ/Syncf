@@ -1,56 +1,21 @@
 ## Syncf - 优雅的文件同步打包工具
-<!-- 终端标题栏 -->
-<div style="
-    background: #2d2d2d;
-    padding: 0.5rem 1rem;
-    border-radius: 6px 6px 0 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.5rem;
-">
-    <span style="
-        width: 12px;
-        height: 12px;
-        background: #ff5f56;
-        border-radius: 50%;
-        display: inline-block;
-    "></span>
-    <span style="
-        width: 12px;
-        height: 12px;
-        background: #ffbd2e;
-        border-radius: 50%;
-        display: inline-block;
-    "></span>
-    <span style="
-        width: 12px;
-        height: 12px;
-        background: #27ca3f;
-        border-radius: 50%;
-        display: inline-block;
-    "></span>
-    <span style="
-        color: #888;
-        font-size: 0.8em;
-        margin-left: 1rem;
-    ">syncf — bash</span>
-</div>
+<div align="center">
 
-<pre style="
-    margin: 3rem 0 1.5rem 0;
-    padding: 0;
-    font-size: 0.9em;
+<!-- ASCII Art -->
+<div style="
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 11px;
     line-height: 1.2;
-    color: #7ee787;
-    background: transparent;
-    border: none;
-    font-weight: bold;
+    color: #24292f;
+    background: #f6f8fa;
+    padding: 12px 0;
+    margin: 0 auto;
+    max-width: 600px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    text-align: center;
 ">
+<pre style="margin: 0; padding: 0; overflow-x: visible; white-space: pre;">
          ::::::::::  ##::    ::## ##::   ::##  :::::::::: :::::::::::: 
         ::::::::::::  ##::  ::##  ###::  ::## :::::::::::: :::::::::::: 
         ::::::         ########   ####:: ::## ::::::       ::::::       
@@ -59,16 +24,24 @@
         ::::::::::::     ####     ##   ::##:: :::::::::::: ::::::       
          ::::::::::      ####     ##    ::##   :::::::::: ::::::       
 </pre>
+</div>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.6+-blue.svg" alt="Python Version">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen.svg" alt="Status">
+<!-- Title -->
+<h1 style="color: #24292f; margin: 20px 0 16px 0; font-weight: 600;">Syncf - 优雅的文件同步打包工具</h1>
+
+<!-- Badges -->
+<p style="margin: 16px 0;">
+  <span style="background: #0550ae; color: white; padding: 5px 10px; border-radius: 2em; font-size: 13px; font-weight: 500;">Python 3.6+</span>
+  <span style="background: #2da44e; color: white; padding: 5px 10px; border-radius: 2em; font-size: 13px; font-weight: 500;">License MIT</span>
+  <span style="background: #2da44e; color: white; padding: 5px 10px; border-radius: 2em; font-size: 13px; font-weight: 500;">Status Active</span>
 </p>
 
-<p align="center">
+<!-- Description -->
+<p style="color: #57606a; font-size: 16px; margin: 20px auto; max-width: 600px; line-height: 1.5;">
   <strong>一个优雅的命令行工具，用于智能打包和管理文件集合</strong>
 </p>
+
+</div>
 
 ## ✨ 特性亮点
 
