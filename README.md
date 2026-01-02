@@ -1,21 +1,7 @@
 ## Syncf - 优雅的文件同步打包工具
-<div align="center">
-
-<!-- ASCII Art -->
-<div style="
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-    font-size: 11px;
-    line-height: 1.2;
-    color: #24292f;
-    background: #f6f8fa;
-    padding: 12px 0;
-    margin: 0 auto;
-    max-width: 600px;
-    border: 1px solid #d0d7de;
-    border-radius: 6px;
-    text-align: center;
-">
-<pre style="margin: 0; padding: 0; overflow-x: visible; white-space: pre;">
+<p align="center">
+<strong>
+<pre>
          ::::::::::  ##::    ::## ##::   ::##  :::::::::: :::::::::::: 
         ::::::::::::  ##::  ::##  ###::  ::## :::::::::::: :::::::::::: 
         ::::::         ########   ####:: ::## ::::::       ::::::       
@@ -24,10 +10,8 @@
         ::::::::::::     ####     ##   ::##:: :::::::::::: ::::::       
          ::::::::::      ####     ##    ::##   :::::::::: ::::::       
 </pre>
-</div>
-
-<!-- Title -->
-<h1 style="color: #24292f; margin: 20px 0 16px 0; font-weight: 600;">Syncf - 优雅的文件同步打包工具</h1>
+</strong>
+</p>
 
 <!-- Badges -->
 <p style="margin: 16px 0;">
