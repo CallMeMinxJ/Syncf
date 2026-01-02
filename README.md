@@ -1,16 +1,4 @@
 ## Syncf - 优雅的文件同步打包工具
-<div align="center" style="
-    background: #1e1e1e;
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    margin: 2rem 0;
-    border: 1px solid #444;
-    font-family: 'Courier New', Consolas, Monaco, monospace;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-">
-
 <!-- 终端标题栏 -->
 <div style="
     background: #2d2d2d;
