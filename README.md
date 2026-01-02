@@ -1,5 +1,14 @@
 ## Syncf - 优雅的文件同步打包工具
 
+         ::::::::::  ##::    ::## ##::   ::##  :::::::::: :::::::::::: 
+        ::::::::::::  ##::  ::##  ###::  ::## :::::::::::: :::::::::::: 
+        ::::::         ########   ####:: ::## ::::::       ::::::       
+         ::::::::::     ######    ## ::####:: ::::::       ::::::::::   
+             :::::::     ####     ##  ::###:: ::::::       ::::::::::   
+        ::::::::::::     ####     ##   ::##:: :::::::::::: ::::::       
+         ::::::::::      ####     ##    ::##   :::::::::: ::::::       
+
+
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.6+-blue.svg" alt="Python Version">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
@@ -29,13 +38,15 @@
 git clone <your-repo-url>
 cd syncf
 
-# 安装依赖
-pip install -r requirements.txt
-
 # 或使用虚拟环境
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python ./src/syncf.py
+
+or
+
+./bin/syncf
+
 ```
 
 ### 基本使用
@@ -45,7 +56,7 @@ pip install -r requirements.txt
 syncf -h
 
 # 使用文件列表打包
-syncf -z filelist.txt myproject
+syncf -z filelist myproject
 
 # 解包最新文件
 syncf -u
@@ -63,12 +74,10 @@ syncf -c
 syncf/
 ├── src/
 │   ├── syncf.py          # 主功能模块
-│   ├── cli.py            # 命令行接口
 │   └── __main__.py       # 可执行入口
 ├── bin/
 │   └── syncf             # 可执行脚本
 ├── .files/               # 包文件存储目录（自动创建）
-├── requirements.txt      # 依赖列表
 └── README.md            # 本文档
 ```
 
@@ -281,15 +290,6 @@ syncf -u
 - ✅ 批量清理功能
 - ✅ 跨平台支持
 
-## 🤝 贡献指南
-
-欢迎提交 Issue 和 Pull Request！
-
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/amazing`)
-3. 提交更改 (`git commit -m 'Add amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing`)
-5. 开启 Pull Request
 
 ## 📄 许可证
 
@@ -301,7 +301,6 @@ syncf -u
 
 - 📧 Email: astor.jiang@outlook.com
 - 💼 GitHub: [@astor](https://github.com/CallMeMinxJ)
-- 🏢 Company: GoerTek
 
 ## 🙏 致谢
 
